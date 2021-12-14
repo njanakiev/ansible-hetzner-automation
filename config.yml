@@ -1,0 +1,9 @@
+---
+server_names:
+- server1
+- server2
+
+hcloud_ssh_key_name: key_name
+
+server_type: cx11
+server_location: nbg1
