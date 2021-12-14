@@ -6,4 +6,5 @@ server_names:
 hcloud_ssh_key_name: key_name
 
 server_type: cx11
+server_image: ubuntu-20.04
 server_location: nbg1

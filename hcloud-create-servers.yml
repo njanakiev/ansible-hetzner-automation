@@ -5,7 +5,6 @@
   gather_facts: false
   user: root
   vars:
-    server_image: ubuntu-20.04
     hcloud_token: "{{ lookup('env', 'HCLOUD_TOKEN') }}"
   
   vars_files:
