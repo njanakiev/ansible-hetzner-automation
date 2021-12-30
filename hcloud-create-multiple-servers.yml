@@ -32,7 +32,7 @@
   - name: Remove host keys of servers.
     known_hosts:
       name: "{{ item.hcloud_server.ipv4_address }}"
-      path: /home/nikolai/.ssh/known_hosts
+      path: ~/.ssh/known_hosts
       state: absent
     loop: "{{ server.results }}"
 

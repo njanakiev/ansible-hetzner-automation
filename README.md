@@ -58,6 +58,7 @@ ansible-inventory --graph
 To run ad-hoc commands, type:
 
 ```bash
+ansible all -u root -m ping
 ansible all -u root -a "free -m"
 ```
 
