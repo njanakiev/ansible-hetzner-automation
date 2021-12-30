@@ -44,16 +44,17 @@
   - config.yml
 
   pre_tasks:
-  - name: Wait until server is ready.
+  - name: Wait until servers are ready.
     wait_for:
       host: "{{ ipv4 }}"
       port: 22
+      search_regex: OpenSSH
       delay: 2
+      timeout: 320
     delegate_to: localhost
   
   tasks:
-  - name: Include task list in play
-    import_tasks: tasks/install-docker.yml
+  - import_tasks: tasks/install-docker.yml
 
   - name: "Create user {{ username }}."
     user:

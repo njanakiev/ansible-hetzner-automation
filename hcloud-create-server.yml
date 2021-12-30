@@ -1,12 +1,15 @@
 ---
-- name: Create Basic Server
+- name: Create Basic Server.
   hosts: localhost
   connection: local
   gather_facts: False
   user: root
   vars: 
     hcloud_token: "{{ lookup('env', 'HCLOUD_TOKEN') }}"
-  
+
+  vars_files:
+  - config.yml
+
   tasks:
   - name: Create a basic server
     hcloud_server:
@@ -15,7 +18,7 @@
       server_type: cx11
       image: ubuntu-20.04
       location: nbg1
-      state: absent
+      state: present
       ssh_keys:
-      - key_name
+      - "{{ hcloud_ssh_key_name }}"
     register: server
